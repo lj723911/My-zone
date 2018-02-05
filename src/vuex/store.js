@@ -5,7 +5,6 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    msg: 'this is the first message',
     lifeData: {}
   },
   actions: {

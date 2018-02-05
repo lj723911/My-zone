@@ -1,7 +1,6 @@
 <template>
   <div class="main">
     <div class="lt-header">
-      <h1>TodoList</h1>
       <form v-on:submit.prevent="getTask">
         <input v-model="newTask" placeholder="What needs to be done?"/>
       </form>   
@@ -108,7 +107,7 @@ li{
 }
 .main{
   width:70%;
-  margin:0px auto;
+  margin:20px auto;
 }
 .lt-footer{
   width:100%;

@@ -23,12 +23,12 @@ export default new Router({
           component: resolve => require(['../components/todolist/vuetodo.vue'], resolve)
         },
         {
-          path: 'toolbox',
-          component: resolve => require(['../components/toolbox/toolbox.vue'], resolve)
+          path: 'lifeclock',
+          component: resolve => require(['../components/lifeclock/lifeclock.vue'], resolve)
         },
         {
           path: 'demo3',
-          component: resolve => require(['../components/toolbox/demo3.vue'], resolve)
+          component: resolve => require(['../components/lifeclock/demo3.vue'], resolve)
         }
       ]
     },

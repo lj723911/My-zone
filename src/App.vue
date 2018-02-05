@@ -64,8 +64,8 @@ export default {
               content: 'vueTodo'
             },
             {
-              pathway: '/Demos/toolbox',
-              content: 'toolbox'
+              pathway: '/Demos/lifeclock',
+              content: 'lifeclock'
             },
             {
               pathway: '/Demos/demo3',

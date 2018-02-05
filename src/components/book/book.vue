@@ -5,7 +5,7 @@
           <li>
             <div class="coverDesign">
               <h2>i</h2>
-              <p>HISTORY</p>
+              <p>Introduction</p>
             </div>
           </li>
           <li></li>
@@ -16,7 +16,7 @@
           <li v-for="page in pages">
             <div v-if="page.page === '6'" @click = "setExtend">              
               <img src="../../assets/logo.png">
-              <div>点我点我点我</div>
+              <div><h1>-- 戳！--</h1></div>
             </div>
           </li>
         </ul>
@@ -76,6 +76,9 @@ ul {
   margin:0px auto;
   height:280px;
   width:260px;
+}
+.page img{
+  margin:2px;
 }
 /*初始颜色样式*/
 .coverFront li:first-child{

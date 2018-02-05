@@ -85,11 +85,11 @@
             choosed: false,
             category: 'lyric'
           }, {
-            name: '一感',
+            name: '一问',
             choosed: false,
             category: 'thought'
           }, {
-            name: '一日记',
+            name: '一书',
             choosed: false,
             category: 'diary'
           }
@@ -219,6 +219,7 @@ ul {
   text-align:left;
   font-size:14px;
   position:relative;
+  font-family:'微软雅黑'
 }
 .topicPanel:before{
   content:"";
@@ -241,6 +242,7 @@ ul {
 }
 .topicPanel p{
   margin:10px 0px;
+  font-family:'微软雅黑'
 }
 .topicDate p{
   display:inline-block;
@@ -248,5 +250,6 @@ ul {
   background-color:#2c3e50;
   border-radius:50px;
   padding:0 10px;
+  font-family:'微软雅黑'
 }
 </style>
