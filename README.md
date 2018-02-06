@@ -1,13 +1,13 @@
 # Vue + Vuex + axios + canvas 的练手项目
 
-本Demo包括如下模块：
+### 本Demo包括如下模块：
 
-1、翻书的特效————book.vue
-2、Axios的API，调用本地json————api/index.js
-3、canvas动画：像素运动效果————rightSide.vue中
-4、前端基础项目，父子组件的数据传递————TodoList.vue
-5、生命倒计时,圆形进度条————lifeclock.vue
-6、计算器模块
+#### 1、翻书的特效————book.vue<br>
+#### 2、Axios的API，调用本地json————api/index.js<br>
+#### 3、canvas动画：像素运动效果————rightSide.vue中<br>
+#### 4、前端基础项目，父子组件的数据传递————TodoList.vue<br>
+#### 5、生命倒计时,圆形进度条————lifeclock.vue<br>
+#### 6、计算器模块<br>
 
 > 
 
