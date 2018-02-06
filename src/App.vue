@@ -68,8 +68,8 @@ export default {
               content: 'lifeclock'
             },
             {
-              pathway: '/Demos/demo3',
-              content: 'demo3'
+              pathway: '/Demos/calculator',
+              content: 'calculator'
             }
           ]
         },

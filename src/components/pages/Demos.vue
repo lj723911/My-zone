@@ -26,6 +26,7 @@
         switch (hash) {
           case '/Demos/vuetodo': this.msg = 'TodoList'; break
           case '/Demos/lifeclock': this.msg = 'LifeClock'; break
+          case '/Demos/calculator': this.msg = 'Calculator'; break
         }
       }
     },

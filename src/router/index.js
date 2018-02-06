@@ -27,8 +27,8 @@ export default new Router({
           component: resolve => require(['../components/lifeclock/lifeclock.vue'], resolve)
         },
         {
-          path: 'demo3',
-          component: resolve => require(['../components/lifeclock/demo3.vue'], resolve)
+          path: 'calculator',
+          component: resolve => require(['../components/calculator/calculator.vue'], resolve)
         }
       ]
     },
