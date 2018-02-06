@@ -1,6 +1,15 @@
-# new-vue
+# Vue + Vuex + axios + canvas 的练手项目
 
-> A Vue.js project
+本Demo包括如下模块：
+
+1、翻书的特效————book.vue
+2、Axios的API，调用本地json————api/index.js
+3、canvas动画：像素运动效果————rightSide.vue中
+4、前端基础项目，父子组件的数据传递————TodoList.vue
+5、生命倒计时,圆形进度条————lifeclock.vue
+6、计算器模块
+
+> 
 
 ## Build Setup
 
