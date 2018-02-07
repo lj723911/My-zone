@@ -187,6 +187,9 @@
 </script>
 
 <style scoped>
+  #myCanvas{
+    cursor: pointer;
+  }
   #backbtn img{
     width:60px;
     height:60px;

@@ -5,11 +5,15 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    lifeData: {}
+    lifeData: {},
+    showMask: false
   },
   actions: {
   },
   mutations: {
+    checkMask: (state, value) => {
+      state.showMask = value
+    },
     setLifedata: (state, value) => {
       state.lifeData = value
     },

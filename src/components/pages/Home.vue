@@ -1,16 +1,10 @@
 <template>
 <div>
   <el-row class="ishow">
-    <transition name="flapout">
-      <el-col :span="24" v-if="isShow" class="extendPage">
-          <resume></resume>
-          <div class="closeBtn" @click="closePage"><i class="el-icon-circle-close"></i></div>
-      </el-col>
-    </transition>
     <el-col class="left" :xs={span:24} :sm={span:13} >
       <book v-on:receive="extendPage" v-bind:style="{'pointer-events': isHover}"></book>
     </el-col>
-    <el-col :xs={span:20,push:2} :sm={span:8} class="right" v-if="!isShow">
+    <el-col :xs={span:20,push:2} :sm={span:8} class="right" >
         <p>{{msg}}</p>
         <p>{{msgOrigin}}</p>
     </el-col>
@@ -25,29 +19,28 @@
 </template>
 
 <script>
-import resume from '@/components/resume/resume.vue'
+import {mapMutations, mapState} from 'vuex'
 import book from '@/components/book/book.vue'
 import lifeaxis from '@/components/lifeaxis/lifeaxis.vue'
+
 export default {
   name: 'home',
-  components: { resume, book, lifeaxis },
+  components: { book, lifeaxis },
   data () {
     return {
       msg: 'Life is Like a Box of Chocolates：You never Know What You’re Gonna Get.',
       msgOrigin: '——" Agam"',
-      isShow: false,
       isHover: 'auto'
     }
   },
   methods: {
+    ...mapMutations(['checkMask']),
     extendPage () {
-      this.isShow = true
-      this.isHover = 'none'
-    },
-    closePage () {
-      this.isShow = false
-      this.isHover = 'auto'
+      this.checkMask(true)
     }
+  },
+  computed: {
+    ...mapState(['showMask'])
   }
 }
 </script>
@@ -77,78 +70,6 @@ export default {
 }
 .left{
   height:280px;
-}
-.closeBtn{
-  width:20px;
-  height:20px;
-  font-size: 20px;
-  position:absolute;
-  top:10px;
-  right:10px;
-  background-color:#ffffff;
-}
-/*扩展页动画*/
-.extendPage{
-  position:absolute;
-  top:2%;
-  left:2%;
-  width:96%;
-  height:350px;
-  padding:10px 2%;
-  z-index:+102;
-  -webkit-transform: rotateY(0deg) translateZ(12px);
-  -moz-transform: rotateY(0deg) translateZ(12px);
-  transform: rotateY(0deg) translateZ(12px);
-  background: #fff;
-  border: 1px solid #cccccc;
-  -webkit-box-shadow: -2px -2px 2px rgba(0, 0, 0, 0.1) inset;
-  -webkit-border-bottom-right-radius: 60px 50px;   
-}
-.extendPage:before{
-    content:'';    
-    width: 25px;
-    height: 20px;
-    position: absolute;
-    bottom:0;
-    right:0;
-    -webkit-border-bottom-right-radius: 30px;
-    -webkit-box-shadow: -2px -2px 2px #aaaaaa;
-    -webkit-transform:
-    rotate(-20deg)
-    skew(-40deg,-3deg)
-    translate(-13px,-13px);
-}
-.flapout-enter-active{
-    animation: extendPages 1000ms ease
-}
-.flapout-leave-active{
-    animation: extendPages 1000ms ease reverse
-}
-@keyframes extendPages{
-  0% {
-    top:8%;
-    left:25%;
-    width:260px;
-    height:280px;
-    transform: rotateY(-35deg) translateZ(12px);
-    opacity:0;
-  }
-  30% {
-    top:8%;
-    left:25%;
-    width:260px;
-    height:280px;
-    transform: rotateY(-35deg) translateZ(12px);
-    opacity:1;
-  }
-  100% {
-    width:96%;
-    height:350px;
-    top:2%;
-    left:2%;
-    transform: rotateY(0deg) translateZ(12px);
-    opacity:1;;
-  }
 }
 /*时光轴*/
 .timeAxis{

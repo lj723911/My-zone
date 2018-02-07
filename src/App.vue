@@ -1,6 +1,20 @@
 <template>
 <el-container id="app">
+
+  <!--masker部分-->
+  <transition name="flapout">
+    <el-row class="masker" v-if="ismask">
+      <el-col :xs={span:24,offset:0} :sm={span:20,offset:2} :md={span:16,offset:4} :lg={span:12,offset:6} :xl={span:8,offset:8}>
+          <div class="extendPage"><resume></resume></div>
+      </el-col>
+      <div class="closeBtn" @click="closePage">
+        <i class="el-icon-close"></i>
+      </div>
+    </el-row>
+  </transition>
+
   <!--header部分-->
+
   <el-row class="header">
     <!--顶部-->
     <el-col :xs={span:24,offset:0} :sm={span:16,offset:4}>
@@ -28,25 +42,32 @@
   </el-row>
 
   <!--中间部分-->
+
   <el-row class="showarea">
-    <el-col :xs={span:24,offset:0} :sm={span:20,offset:2} :md={span:16,offset:4} :lg={span:12,offset:6} :xl={span:8,offset:8}><router-view/></el-col>
+    <el-col :xs={span:24,offset:0} :sm={span:20,offset:2} :md={span:16,offset:4} :lg={span:12,offset:6} :xl={span:8,offset:8}>
+    <router-view/></el-col>
   </el-row>
 
   <!--footer部分-->
+
   <el-row class="footer">
     <el-col :xs={span:24,offset:0} :sm={span:16,offset:4}>@ 2017 高贵愚兄 黑历史</el-col>
   </el-row>
   
   <!--悬浮组件-->
+
   <rightSide></rightSide>
 </el-container>
 </template>
 
 <script>
+import {mapMutations, mapState} from 'vuex'
 import rightSide from '@/components/pages/rightSide.vue'
+import resume from '@/components/resume/resume.vue'
+
 export default {
   name: 'app',
-  components: { rightSide },
+  components: {rightSide, resume},
   data () {
     return {
       activeIndex: '1',
@@ -79,11 +100,24 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    ...mapMutations(['checkMask']),
+    closePage () {
+      this.checkMask(false)
+    }
+  },
+  computed: {
+    ...mapState(['showMask']),
+    ismask () {
+      return this.$store.state.showMask
+    }
   }
 }
 </script>
 
 <style>
+/* 主样式 */
 ::-webkit-scrollbar{
   display:none
 }
@@ -100,6 +134,53 @@ html,body{
   text-align: center;
   color: #2c3e50;
 }
+/*扩展页动画*/
+.masker{
+  width:100%;
+  height:100%;
+  background-color:rgba(0, 0, 0, 0.5);
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:+250;
+  overflow-y:auto; 
+}
+.closeBtn{
+  width:40px;
+  height:40px;
+  font-size: 40px;
+  position:absolute;
+  top:0px;
+  right:0px;
+  background-color:rgba(0, 0, 0, 0.8);
+}
+.extendPage{
+  width:100%;
+  padding:10px 0px;
+  margin:50px 0px;
+  background: #fff;
+  border: 1px solid #cccccc;
+  -webkit-box-shadow: -2px -2px 2px rgba(0, 0, 0, 0.1) inset; 
+}
+.flapout-enter-active{
+    animation: extendPages 400ms ease
+}
+.flapout-leave-active{
+    animation: extendPages 400ms ease reverse
+}
+@keyframes extendPages{
+  0% {
+    width:10px;
+    left:45%;
+    opacity:0;
+  }
+  100% {
+    width:100%;
+    left:0px;
+    opacity:1;;
+  }
+}
+/* 其他 */
 .header{
   width:100%;
   height:120px;

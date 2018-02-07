@@ -89,7 +89,8 @@
 
 <style scoped>
 .main{
-  height:300px;
+  height:600px;
+  padding:0 30px;
   overflow-y:auto;
 }
 .block{
