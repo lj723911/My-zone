@@ -116,7 +116,7 @@ export default {
 }
 </script>
 
-<style>
+<style soped>
 /* 主样式 */
 ::-webkit-scrollbar{
   display:none
@@ -156,10 +156,10 @@ html,body{
 }
 .extendPage{
   width:100%;
-  padding:10px 0px;
-  margin:50px 0px;
+  height:100%;
+  padding:0px;
+  margin:150px 0px;
   background: #fff;
-  border: 1px solid #cccccc;
   -webkit-box-shadow: -2px -2px 2px rgba(0, 0, 0, 0.1) inset; 
 }
 .flapout-enter-active{

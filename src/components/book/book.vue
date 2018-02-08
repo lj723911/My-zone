@@ -16,7 +16,6 @@
           <li v-for="page in pages">
             <div v-if="page.page === '6'" @click = "setExtend">              
               <img src="../../assets/logo.png">
-              <div><h1>-- 戳！--</h1></div>
             </div>
           </li>
         </ul>
@@ -79,6 +78,9 @@ ul {
 }
 .page img{
   margin:2px;
+}
+.page img:hover{
+  cursor:pointer;
 }
 /*初始颜色样式*/
 .coverFront li:first-child{
