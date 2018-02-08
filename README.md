@@ -1,4 +1,4 @@
-# Vue + Vuex + axios + canvas 的练手项目
+# Vue + Vuex + axios + jsonServer + canvas 的练手项目
 ![主页](https://github.com/lj723911/My-zone/blob/master/screenshots/1.png?raw=true)
 
 ### 本Demo包括如下模块：
